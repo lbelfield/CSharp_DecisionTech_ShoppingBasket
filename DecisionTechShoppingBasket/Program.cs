@@ -12,9 +12,15 @@ namespace DecisionTechShoppingBasket
             IShoppingBasket shoppingBasket = new ShoppingBasket();
             ICustomer customer = new Customer(shoppingBasket);
 
-            IShop shop = new Shop(customer, stock);
-            
-            shop.PlaceCustomerOrder();
+            IOffers offers = new Offers();
+            IOrder order = new Order(offers);
+
+            IShop shop = new Shop(customer, stock, order);
+
+            var totalWithDiscounts = shop.PlaceCustomerOrder();
+
+            Console.WriteLine("Total: " + totalWithDiscounts);
+            Console.Read();
         }
     }
 }

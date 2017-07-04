@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using DecisionTechDataContracts;
 using DecisionTechShoppingBasket.Interfaces;
 
@@ -6,9 +7,9 @@ namespace DecisionTechShoppingBasket
 {
     public class Stock : IStock
     {
-        public List<Product> GetAvailableProducts()
+        public Collection<Product> GetAvailableProducts()
         {
-            return new List<Product> { new Butter(), new Bread(), new Milk() };
+            return new Collection<Product> { new Butter(), new Bread(), new Milk() };
         }
     }
 }

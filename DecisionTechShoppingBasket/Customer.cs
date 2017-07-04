@@ -6,18 +6,17 @@ namespace DecisionTechShoppingBasket
 {
     public class Customer : ICustomer
     {
-        private readonly IShoppingBasket _shoppingBasket;
+        public IShoppingBasket ShoppingBasket { get; set; }
 
         public Customer(IShoppingBasket shoppingBasket)
         {
-            _shoppingBasket = shoppingBasket;
+            ShoppingBasket = shoppingBasket;
         }
 
         public void AddToBasket(Product product, int quantity)
         {
-            _shoppingBasket.ProductsOrdered.Add(new ProductOrdered { Product = product, Quantity = quantity });
-            _shoppingBasket.GrandTotal += (product.Cost * quantity);
-            Console.WriteLine(_shoppingBasket.GrandTotal);
+            ShoppingBasket.ProductsOrdered.Add(new ProductOrdered { Product = product, Quantity = quantity });
+            ShoppingBasket.GrandTotal += (product.Cost * quantity);
         }
 
         public int GetQuantity(Product product)

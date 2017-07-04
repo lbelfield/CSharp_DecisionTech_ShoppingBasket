@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using DecisionTechDataContracts;
 
 namespace DecisionTechShoppingBasket.Interfaces
 {
     public interface IStock
     {
-        List<Product> GetAvailableProducts();
+        Collection<Product> GetAvailableProducts();
     }
 }

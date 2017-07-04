@@ -2,6 +2,6 @@
 {
     public interface IShop
     {
-        void PlaceCustomerOrder();
+        double PlaceCustomerOrder();
     }
 }
