@@ -1,5 +1,4 @@
-﻿using System;
-using DecisionTechDataContracts;
+﻿using DecisionTechDataContracts;
 using DecisionTechShoppingBasket.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
