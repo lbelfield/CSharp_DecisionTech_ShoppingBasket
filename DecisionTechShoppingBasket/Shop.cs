@@ -19,7 +19,8 @@ namespace DecisionTechShoppingBasket
             var products = _stock.GetAvailableProducts();
             foreach (var product in products)
             {
-                Console.WriteLine(product.Name);
+                var quantity = _customer.GetQuantity(product);
+                _customer.AddToBasket(product, quantity);
             }
             Console.Read();
         }
