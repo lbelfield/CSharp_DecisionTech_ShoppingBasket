@@ -8,13 +8,13 @@ namespace DecisionTechShoppingBasket
         static void Main(string[] args)
         {
             IStock stock = new Stock();
+
+            IShoppingBasket shoppingBasket = new ShoppingBasket();
+            ICustomer customer = new Customer(shoppingBasket);
+
+            IShop shop = new Shop(customer, stock);
             
-            var products = stock.GetAvailableProducts();
-            foreach (var product in products)
-            {
-                Console.WriteLine(product.Name);                
-            }
-            Console.Read();
+            shop.PlaceCustomerOrder();
         }
     }
 }
